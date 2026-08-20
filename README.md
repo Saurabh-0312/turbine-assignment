@@ -1,70 +1,63 @@
 # Turbin3 Builders Cohort — Q3 2026
 
-Assignments, notes, and capstone work for the Turbin3 Builders Cohort.
+Assignments, notes, and capstone work.
 
 **Cadet:** Saurabh Singh ([@Saurabh-0312](https://github.com/Saurabh-0312))
-**Devnet wallet:** `55FJao825sA7rR9aKNtUEuGzN2gQNN9nZBw41WCWjvwb`
-
----
-
-## Structure
 
 | Path | Contents |
 |---|---|
-| [`prereq/`](prereq/) | Prerequisite challenge — Anchor vault + registration CPI |
+| [`prereq/`](prereq/) | Prerequisite challenge — vault program with registration CPI |
 | [`assignments/`](assignments/) | Weekly assignments, weeks 1–5 |
-| [`capstone/`](capstone/) | Capstone: LOI, architecture diagrams, project, demo deck |
-| [`notes/`](notes/) | Learning notes and references |
+| [`capstone/`](capstone/) | Capstone project |
+| [`notes/`](notes/) | Learning notes |
 
 ---
 
 ## Prerequisite Challenge
 
-Source vault program forked from
-[`ShrinathNR/pre-req-vault`](https://github.com/ShrinathNR/pre-req-vault)
-@ `f9f7ff7` (vendored into [`prereq/pre-req-vault/`](prereq/pre-req-vault/)).
+An Anchor vault program ([`prereq/pre-req-vault/`](prereq/pre-req-vault/)) whose `withdraw`
+instruction was extended to perform a CPI into the Turbin3 registration program, recording
+a GitHub username on-chain.
 
-### Tasks
+### Architecture
 
-- [ ] **1.** Understand the vault program — instructions, accounts, state, flow
-- [ ] **2.** Extend `withdraw` with a CPI to the registration program, deploy own program
-- [ ] **3.** Architecture diagram
-- [ ] **4.** Video walkthrough (max 3 min, captioned, YouTube)
+![Vault program architecture](prereq/vault-architecture.png)
 
-### Key addresses
+Detailed write-up: [`notes/vault-architecture.md`](notes/vault-architecture.md)
+
+### Deployment (devnet)
 
 | | |
 |---|---|
+| Vault program | `BUrv79rKUhUxJgnvuxf6TNYkWPgc5NVKfxUD2kgjJbua` |
 | Registration program | `TRBZyQHB3m68FGeVsqTK39Wm4xejadjVhP5MAZaKWDM` |
-| Registration instruction | `initialize(github: String)` |
-| Application PDA seeds | `["prereqs", user]` |
-| Vault program (upstream) | `DBoobRVqT7PaAhq8obqo95723CHyWvcCLRUKvQ5wYWE4` — replaced with own deployment |
+| Application account | `3Lu5D243E5Mhw6xFenqBYrwrmynUpVcsXzPtSxsQpwJT` |
+| Withdraw tx (CPI) | [`4jB841N3…CTBw8F`](https://explorer.solana.com/tx/4jB841N3QBVA4yWMCcaX2P5wgJM9K6Pems7mdk2NpEtrPtcAACxXtM974Kgex87xexEyct6nw78qoHFhfYCTBw8F?cluster=devnet) |
 
-Registration is **one per wallet** and records the GitHub username `Saurabh-0312`.
+The application account stores `github = "Saurabh-0312"` —
+[view on Explorer](https://explorer.solana.com/address/3Lu5D243E5Mhw6xFenqBYrwrmynUpVcsXzPtSxsQpwJT?cluster=devnet).
 
----
+### Build and test
 
-## Toolchain
-
-| Tool | Version |
-|---|---|
-| Rust | 1.95.0 |
-| Solana CLI | 2.2.7 (Agave) |
-| Anchor | 1.1.2 (required by `programs/pre-req-vault/Cargo.toml`) |
-| Node | 25.6.0 |
-
-Cluster: **devnet**
+Rust 1.95 · Solana CLI 2.2.7 · Anchor 1.1.2 · Node 25 · cluster: devnet
 
 ```bash
-avm install 1.1.2 && avm use 1.1.2
 cd prereq/pre-req-vault
-anchor build
-anchor test
+yarn install
+cargo build-sbf --tools-version v1.52
+anchor idl build -o target/idl/pre_req_vault.json -t target/types/pre_req_vault.ts
+solana program deploy target/deploy/pre_req_vault.so
+
+export ANCHOR_PROVIDER_URL="https://api.devnet.solana.com"
+export ANCHOR_WALLET="$HOME/.config/solana/id.json"
+yarn run ts-mocha -p ./tsconfig.json -t 1000000 "tests/**/*.ts"
 ```
+
+Starter program forked from [`ShrinathNR/pre-req-vault`](https://github.com/ShrinathNR/pre-req-vault).
 
 ---
 
-## Links
+## References
 
 - [Solana docs](https://solana.com/docs) · [core concepts](https://solana.com/docs/core)
 - [Anchor docs](https://www.anchor-lang.com/docs)

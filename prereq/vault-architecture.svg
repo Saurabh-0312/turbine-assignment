@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="990" viewBox="0 0 1440 990">
+<rect x="0" y="0" width="1440" height="990" fill="#ffffff"/>
+
+<text x="50" y="56" font-family="Helvetica" font-size="30" font-weight="bold" fill="#1a202c">Vault Program - Architecture</text>
+<text x="50" y="86" font-family="Courier" font-size="15" fill="#4a5568">devnet    program id: BUrv79rKUhUxJgnvuxf6TNYkWPgc5NVKfxUD2kgjJbua</text>
+
+<rect x="50" y="250" width="210" height="100" rx="8" fill="#e6fffa" stroke="#2c7a7b" stroke-width="2"/>
+<text x="155" y="292" font-family="Helvetica" font-size="18" font-weight="bold" fill="#1a202c" text-anchor="middle">User Wallet</text>
+<text x="155" y="318" font-family="Courier" font-size="13" fill="#2d3748" text-anchor="middle">55FJao8...jvwb</text>
+
+<rect x="330" y="140" width="440" height="460" rx="10" fill="#f5f7fa" stroke="#4a5568" stroke-width="2"/>
+<text x="350" y="174" font-family="Helvetica" font-size="20" font-weight="bold" fill="#1a202c">Vault Program</text>
+<text x="350" y="196" font-family="Courier" font-size="12" fill="#4a5568">BUrv79rK...</text>
+
+<rect x="356" y="214" width="388" height="66" rx="6" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="372" y="242" font-family="Helvetica" font-size="17" font-weight="bold" fill="#1a202c">initialize</text>
+<text x="372" y="264" font-family="Helvetica" font-size="12.5" fill="#4a5568">creates vault_state, saves both bumps</text>
+
+<rect x="356" y="300" width="388" height="66" rx="6" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="372" y="328" font-family="Helvetica" font-size="17" font-weight="bold" fill="#1a202c">deposit(amount)</text>
+<text x="372" y="350" font-family="Helvetica" font-size="12.5" fill="#4a5568">moves SOL from user into vault</text>
+
+<rect x="356" y="386" width="388" height="66" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="2"/>
+<text x="372" y="414" font-family="Helvetica" font-size="17" font-weight="bold" fill="#1a202c">withdraw(amount)</text>
+<text x="372" y="436" font-family="Helvetica" font-size="12.5" fill="#4a5568">vault to user, then CPI to registration</text>
+
+<rect x="356" y="472" width="388" height="66" rx="6" fill="#ffffff" stroke="#718096" stroke-width="1.5"/>
+<text x="372" y="500" font-family="Helvetica" font-size="17" font-weight="bold" fill="#1a202c">close</text>
+<text x="372" y="522" font-family="Helvetica" font-size="12.5" fill="#4a5568">drains vault, closes vault_state, refunds rent</text>
+
+<line x1="262" y1="300" x2="322" y2="300" stroke="#2d3748" stroke-width="2"/>
+<polygon points="330,300 320,295 320,305" fill="#2d3748"/>
+<text x="292" y="290" font-family="Helvetica" font-size="13" fill="#2d3748" text-anchor="middle">signs</text>
+
+<rect x="860" y="180" width="380" height="132" rx="8" fill="#fffaf0" stroke="#b7791f" stroke-width="2"/>
+<text x="880" y="214" font-family="Helvetica" font-size="18" font-weight="bold" fill="#1a202c">vault_state   (PDA)</text>
+<text x="880" y="242" font-family="Courier" font-size="13" fill="#2d3748">seeds: ["state", user]</text>
+<text x="880" y="266" font-family="Helvetica" font-size="13" fill="#4a5568">stores vault_bump, state_bump</text>
+<text x="880" y="290" font-family="Helvetica" font-size="12.5" fill="#718096">10 bytes    Account of VaultState</text>
+
+<rect x="860" y="372" width="380" height="132" rx="8" fill="#fffaf0" stroke="#b7791f" stroke-width="2"/>
+<text x="880" y="406" font-family="Helvetica" font-size="18" font-weight="bold" fill="#1a202c">vault   (PDA)</text>
+<text x="880" y="434" font-family="Courier" font-size="13" fill="#2d3748">seeds: ["vault", vault_state]</text>
+<text x="880" y="458" font-family="Helvetica" font-size="13" fill="#4a5568">holds SOL only, no data</text>
+<text x="880" y="482" font-family="Helvetica" font-size="12.5" fill="#718096">SystemAccount - can safely reach 0</text>
+
+<line x1="746" y1="247" x2="850" y2="247" stroke="#2d3748" stroke-width="2"/>
+<polygon points="858,247 848,242 848,252" fill="#2d3748"/>
+<text x="798" y="238" font-family="Helvetica" font-size="12.5" fill="#2d3748" text-anchor="middle">creates</text>
+
+<line x1="1050" y1="314" x2="1050" y2="362" stroke="#b7791f" stroke-width="2" stroke-dasharray="6,5"/>
+<polygon points="1050,370 1045,360 1055,360" fill="#b7791f"/>
+<text x="1064" y="344" font-family="Helvetica" font-size="12.5" fill="#b7791f">derives</text>
+
+<line x1="746" y1="336" x2="850" y2="398" stroke="#2f855a" stroke-width="2"/>
+<polygon points="858,403 846,398 851,390" fill="#2f855a"/>
+<text x="788" y="352" font-family="Helvetica" font-size="12.5" fill="#2f855a" text-anchor="middle">SOL in</text>
+
+<line x1="850" y1="470" x2="754" y2="440" stroke="#2f855a" stroke-width="2"/>
+<polygon points="746,438 758,433 755,444" fill="#2f855a"/>
+<text x="806" y="486" font-family="Helvetica" font-size="12.5" fill="#2f855a" text-anchor="middle">SOL out</text>
+
+<rect x="860" y="536" width="380" height="104" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+<text x="880" y="564" font-family="Helvetica" font-size="15" font-weight="bold" fill="#1a202c">Who signs</text>
+<text x="880" y="590" font-family="Helvetica" font-size="12.5" fill="#2d3748">deposit: user signature already on the tx</text>
+<text x="880" y="612" font-family="Helvetica" font-size="12.5" fill="#2d3748">withdraw / close: program signs for the vault</text>
+<text x="880" y="632" font-family="Helvetica" font-size="12.5" fill="#2d3748">PDA using its seeds plus bump</text>
+
+<line x1="550" y1="454" x2="550" y2="652" stroke="#c53030" stroke-width="2.5"/>
+<polygon points="550,660 544,648 556,648" fill="#c53030"/>
+<text x="566" y="546" font-family="Helvetica" font-size="15" font-weight="bold" fill="#c53030">CPI</text>
+<text x="566" y="568" font-family="Helvetica" font-size="12.5" fill="#c53030">CpiContext::new - no signer seeds,</text>
+<text x="566" y="588" font-family="Helvetica" font-size="12.5" fill="#c53030">the user already signed</text>
+
+<rect x="330" y="660" width="910" height="250" rx="10" fill="#ebf4ff" stroke="#3182ce" stroke-width="2"/>
+<text x="350" y="694" font-family="Helvetica" font-size="20" font-weight="bold" fill="#1a202c">Registration Program</text>
+<text x="350" y="716" font-family="Courier" font-size="12" fill="#4a5568">TRBZyQHB3m68FGeVsqTK39Wm4xejadjVhP5MAZaKWDM</text>
+
+<rect x="356" y="740" width="380" height="140" rx="6" fill="#ffffff" stroke="#3182ce" stroke-width="1.5"/>
+<text x="372" y="772" font-family="Helvetica" font-size="17" font-weight="bold" fill="#1a202c">initialize(github: String)</text>
+<text x="372" y="800" font-family="Helvetica" font-size="12.5" fill="#4a5568">accounts: user (signer), account,</text>
+<text x="372" y="820" font-family="Helvetica" font-size="12.5" fill="#4a5568">system_program</text>
+<text x="372" y="852" font-family="Courier" font-size="13" fill="#2d3748">arg = "Saurabh-0312"</text>
+
+<rect x="830" y="740" width="390" height="140" rx="8" fill="#fffaf0" stroke="#b7791f" stroke-width="2"/>
+<text x="850" y="772" font-family="Helvetica" font-size="17" font-weight="bold" fill="#1a202c">application_account  (PDA)</text>
+<text x="850" y="800" font-family="Courier" font-size="12.5" fill="#2d3748">seeds: ["prereqs", user]</text>
+<text x="850" y="822" font-family="Helvetica" font-size="12.5" fill="#4a5568">owned by the registration program</text>
+<text x="850" y="852" font-family="Courier" font-size="13" fill="#2d3748">github = "Saurabh-0312"</text>
+
+<line x1="738" y1="808" x2="820" y2="808" stroke="#3182ce" stroke-width="2"/>
+<polygon points="828,808 818,803 818,813" fill="#3182ce"/>
+<text x="779" y="798" font-family="Helvetica" font-size="11.5" fill="#3182ce" text-anchor="middle">creates</text>
+
+<text x="50" y="952" font-family="Helvetica" font-size="12.5" fill="#718096">Every instruction calls the System Program to move lamports. withdraw additionally invokes the registration program, so the SOL transfer</text>
+<text x="50" y="972" font-family="Helvetica" font-size="12.5" fill="#718096">and the registration succeed or fail together in a single transaction.</text>
+</svg>
