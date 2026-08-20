@@ -1,0 +1,33 @@
+# Rust / Anchor build output
+target/
+**/target/
+.anchor/
+test-ledger/
+
+# Program & wallet keypairs -- NEVER commit these
+*-keypair.json
+id.json
+wallet.json
+**/deploy/*.json
+
+# Node
+node_modules/
+**/node_modules/
+.yarn/
+dist/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
