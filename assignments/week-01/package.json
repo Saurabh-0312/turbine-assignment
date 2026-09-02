@@ -1,0 +1,32 @@
+{
+  "name": "week-01-spl-nft",
+  "version": "1.0.0",
+  "description": "Turbin3 Q3 2026 Week 1 assignment: SPL token and MPL Core NFT on devnet",
+  "license": "ISC",
+  "type": "commonjs",
+  "scripts": {
+    "spl:init": "ts-node src/spl/spl_init.ts",
+    "spl:metadata": "ts-node src/spl/spl_metadata.ts",
+    "spl:mint": "ts-node src/spl/spl_mint.ts",
+    "spl:transfer": "ts-node src/spl/spl_transfer.ts",
+    "nft:mint": "ts-node src/nft/nft_mint.ts",
+    "nft:update": "ts-node src/nft/nft_update.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@metaplex-foundation/mpl-core": "^1.10.0",
+    "@metaplex-foundation/mpl-token-metadata": "^3.4.0",
+    "@metaplex-foundation/umi": "^1.5.1",
+    "@metaplex-foundation/umi-bundle-defaults": "^1.5.1",
+    "@solana-program/system": "^0.12.0",
+    "@solana-program/token": "^0.13.0",
+    "@solana/kit": "^6.8.0",
+    "bs58": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "mint": "AjbayCwY5udQxpgn6Jg6yFMVZxCgye96QWQT225hBQFu",
+  "mintDecimals": 6,
+  "signatures": {
+    "splInit": "3kvkLLr32Bom8HQw9UycaVUxk89ui3r8BQeujdzsYCanSi4YxmRZMhittppeBYDJePnnayGGM8Jpt8AZer9WYJ29",
+    "splMetadata": "2bCC1SSJVDx8kbVWK4qrYFBY9udek7BhSpkFZREY3m78HyLkrWMD58VMgKixyYddedMJjDXLkSefJV4qW21ouQgs",
+    "splMint": "4LZ7Vquxadnjo5ZJufG8WBFEoP3V44c3FhSwXq2hjuSwjuRRhh4vCHHky1SJy9JRH2HicpDFY1Y622sDc5JcMVam",
+    "splTransfer": "3h8d2kapBH6DXuiaYyQhGNaUyT9rpsFCrTKPeanpugrUmySBtCQHVu2C2dV7FtZFjeQGVtxHRTSAsbLvwJpbdL5J",
+    "nftMint": "4SzaCvmYZbHKZGysmzU7Kww64z1mwHbwxKqoZtG5rZv2DhtUh6MovHBuFf5tgeipyGY5Jh5RJ5KABhrrixUDEEhz",
+    "nftUpdate": "28V3qsAnsecXaCBNthGWpvsXzJpjLoreqFwERKi4qgfVzJcSYoXQyi8d4UFZAkNYs9WyxHapAHFdZ8kNiqxUXUXk"
+  },
+  "tokenName": "Challenger Token",
+  "tokenSymbol": "CHLGR",
+  "tokenUri": "https://raw.githubusercontent.com/Saurabh-0312/turbine-assignment/main/assignments/week-01/assets/token.json",
+  "ownerAta": "6mDpKmZLqmL3cqBUXDjhSXU7cE88B7Q3egU42XtrLFJo",
+  "mintedAmount": "1000000000",
+  "recipient": "3UQic4bNpbZPUdqwMCzSprLPNA9NMVKwk24n1AgK8kgZ",
+  "recipientAta": "9MgNo9ncDmXpe4TkGfUeS93xPvjX8cSrGHzrpuAvsNZP",
+  "transferredAmount": "250000000",
+  "asset": "2vMZfV9JmABqgVZrZYPjxPZFeVCguKF3nvBRWLPcFxTs",
+  "nftName": "Dodge Challenger",
+  "nftUri": "https://raw.githubusercontent.com/Saurabh-0312/turbine-assignment/main/assignments/week-01/assets/nft.json",
+  "nftUpdatedName": "Dodge Challenger R/T Scat Pack",
+  "nftUpdatedUri": "https://raw.githubusercontent.com/Saurabh-0312/turbine-assignment/main/assignments/week-01/assets/nft-updated.json"
+}

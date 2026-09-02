@@ -1,0 +1,23 @@
+{
+  "name": "Dodge Challenger R/T Scat Pack",
+  "description": "Metadata updated by the asset's update authority to demonstrate MPL Core update on Solana devnet.",
+  "image": "https://raw.githubusercontent.com/Saurabh-0312/turbine-assignment/main/assignments/week-01/assets/dodge-challenger.png",
+  "external_url": "https://github.com/Saurabh-0312/turbine-assignment",
+  "attributes": [
+    { "trait_type": "Make", "value": "Dodge" },
+    { "trait_type": "Model", "value": "Challenger" },
+    { "trait_type": "Trim", "value": "R/T Scat Pack Widebody" },
+    { "trait_type": "Colour", "value": "F8 Green" },
+    { "trait_type": "Engine", "value": "6.4L HEMI V8" },
+    { "trait_type": "Edition", "value": "Updated" }
+  ],
+  "properties": {
+    "category": "image",
+    "files": [
+      {
+        "uri": "https://raw.githubusercontent.com/Saurabh-0312/turbine-assignment/main/assignments/week-01/assets/dodge-challenger.png",
+        "type": "image/png"
+      }
+    ]
+  }
+}

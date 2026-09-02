@@ -1,0 +1,21 @@
+{
+  "name": "Dodge Challenger",
+  "description": "An MPL Core asset minted on Solana devnet for the Turbin3 Q3 2026 Week 1 assignment.",
+  "image": "https://raw.githubusercontent.com/Saurabh-0312/turbine-assignment/main/assignments/week-01/assets/dodge-challenger.png",
+  "external_url": "https://github.com/Saurabh-0312/turbine-assignment",
+  "attributes": [
+    { "trait_type": "Make", "value": "Dodge" },
+    { "trait_type": "Model", "value": "Challenger" },
+    { "trait_type": "Colour", "value": "F8 Green" },
+    { "trait_type": "Edition", "value": "First" }
+  ],
+  "properties": {
+    "category": "image",
+    "files": [
+      {
+        "uri": "https://raw.githubusercontent.com/Saurabh-0312/turbine-assignment/main/assignments/week-01/assets/dodge-challenger.png",
+        "type": "image/png"
+      }
+    ]
+  }
+}
