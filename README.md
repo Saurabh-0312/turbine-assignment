@@ -13,7 +13,7 @@ All work runs against **Solana devnet**.
 |---|---|---|
 | **1** | [SPL token and MPL Core NFT](assignments/week-01/) | Submitted |
 | **2** | [Vault and escrow programs](assignments/week-02/) | Submitted |
-| 3 | — | Not started |
+| **3** | [Constant product AMM](assignments/week-03/) | Submitted |
 | 4 | — | Not started |
 | 5 | — | Not started |
 
@@ -38,6 +38,15 @@ from the clock sysvar, so a stale offer can no longer be filled. Covered by 13 t
 against a local validator.
 
 Full write-up: [`assignments/week-02/README.md`](assignments/week-02/README.md)
+
+### Week 3 — Constant product AMM
+
+A pool over `x * y = k` with deposit, withdraw and swap. Two separate fees: the swap
+fee stays in the vaults and grows every liquidity position, while a protocol fee is
+skimmed before the curve into treasury accounts only the pool authority can claim.
+Covered by 14 tests against a local validator.
+
+Full write-up: [`assignments/week-03/README.md`](assignments/week-03/README.md)
 
 ---
 
