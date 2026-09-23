@@ -1,0 +1,10 @@
+{
+  "name": "Remit Dollar",
+  "symbol": "RUSD",
+  "description": "A remittance stablecoin issued on Token-2022 with a protocol transfer fee, KYC-gated accounts and on-chain metadata.",
+  "image": "",
+  "attributes": [
+    { "trait_type": "standard", "value": "Token-2022" },
+    { "trait_type": "decimals", "value": "6" }
+  ]
+}

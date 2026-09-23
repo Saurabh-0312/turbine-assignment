@@ -1,0 +1,42 @@
+[package]
+name = "stablecoin"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "stablecoin"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+anchor-debug = []
+custom-heap = []
+custom-panic = []
+
+[dependencies]
+anchor-lang = "0.32.0"
+anchor-spl = "0.32.0"
+bytemuck = "1"
+
+[dev-dependencies]
+borsh = "1"
+solana-program-test = "2.3.13"
+solana-keypair = "2.2"
+solana-signer = "2.2"
+solana-transaction = "2.2"
+solana-transaction-error = "2.2"
+solana-compute-budget-interface = "2.2"
+solana-system-interface = "1.0"
+spl-associated-token-account = { version = "7.0.0", features = ["no-entrypoint"] }
+spl-token-confidential-transfer-proof-extraction = "0.3.0"
+spl-token-confidential-transfer-proof-generation = "=0.4.0"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }

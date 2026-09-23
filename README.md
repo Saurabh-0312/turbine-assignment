@@ -14,7 +14,7 @@ All work runs against **Solana devnet**.
 | **1** | [SPL token and MPL Core NFT](assignments/week-01/) | Submitted |
 | **2** | [Vault and escrow programs](assignments/week-02/) | Submitted |
 | **3** | [Constant product AMM](assignments/week-03/) | Submitted |
-| 4 | — | Not started |
+| **4** | [Token-2022 remittance stablecoin](assignments/week-04/) | Submitted |
 | 5 | — | Not started |
 
 ### Week 1 — SPL token and MPL Core NFT
@@ -47,6 +47,16 @@ skimmed before the curve into treasury accounts only the pool authority can clai
 Covered by 14 tests against a local validator.
 
 Full write-up: [`assignments/week-03/README.md`](assignments/week-03/README.md)
+
+### Week 4 — Token-2022 remittance stablecoin
+
+A stablecoin mint stacking a transfer fee, on-chain metadata, frozen-by-default
+accounts and a close authority, with a KYC thaw path and transfers priced from the
+live epoch. A re-issue adds confidential transfers and a seizure authority, and the
+confidential lifecycle runs end to end with real zero-knowledge proofs. Covered by
+18 tests on `solana-program-test`.
+
+Full write-up: [`assignments/week-04/README.md`](assignments/week-04/README.md)
 
 ---
 
