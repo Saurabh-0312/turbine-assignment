@@ -15,7 +15,7 @@ All work runs against **Solana devnet**.
 | **2** | [Vault and escrow programs](assignments/week-02/) | Submitted |
 | **3** | [Constant product AMM](assignments/week-03/) | Submitted |
 | **4** | [Token-2022 remittance stablecoin](assignments/week-04/) | Submitted |
-| 5 | — | Not started |
+| **5** | [Metaplex Core NFT staking](assignments/week-05/) | Submitted |
 
 ### Week 1 — SPL token and MPL Core NFT
 
@@ -57,6 +57,16 @@ confidential lifecycle runs end to end with real zero-knowledge proofs. Covered 
 18 tests on `solana-program-test`.
 
 Full write-up: [`assignments/week-04/README.md`](assignments/week-04/README.md)
+
+### Week 5 — Metaplex Core NFT staking
+
+Stakes Core NFTs by freezing them under a program-controlled freeze delegate.
+Holders can claim rewards without unstaking, burn a staked NFT through a burn
+delegate for a one-time bonus, and the collection itself carries a `total_staked`
+attribute that moves with every stake, unstake and burn. Covered by 17 tests
+against a local validator running Metaplex Core.
+
+Full write-up: [`assignments/week-05/README.md`](assignments/week-05/README.md)
 
 ---
 
